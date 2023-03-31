@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>h2{
+        color: green;
+        width: 50%;
+        text-decoration: underline;
+    text-decoration-color: mediumseagreen;
+    text-decoration-thickness: 3px;
+      }
+      div {
+  background-color: rgb(38, 68, 21);
+}
+.box{
+   background-color:  rgb(7, 26, 60);
+}
+
+      </style>
+   
+	<title>Box Example</title>
+	<style>
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		.box {
+			width: 300px;
+			height: 350px;
+			margin: 1rem;
+			background-color: #f2f2f2;
+			border-radius: 5px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			transition: transform 0.3s ease-in-out;
+			cursor: pointer;
+		}
+		.box:hover {
+			transform: scale(1.05);
+		}
+		label {
+			font-size: 1.2rem;
+			margin-bottom: 0.5rem;
+		}
+		input[type="text"] {
+			font-size: 1rem;
+			padding: 0.5rem;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin-bottom: 1rem;
+			width: 80%;
+			box-sizing: border-box;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+		}
+		button {
+			font-size: 1rem;
+			padding: 0.3rem 1rem;
+			background-color: #008CBA;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 1rem;
+			align-self: center;
+		}
+	</style>
+</head>
+<body>
+    <script>
+        function checkFlag(event) {
+            event.preventDefault();
+            let textboxId = event.target.querySelector('input[type="text"]').id;
+            let flag = event.target.querySelector('input[type="text"]').value;
+            let messageDiv = document.getElementById(`message${textboxId.slice(-1)}`);
+    
+            if (flag === 'CTF{FlaggyWaggyRaggy}') {
+                messageDiv.innerHTML = '<div class="success">You solved this!</div>';
+                console.log("correct Flag")
+            } else {
+                messageDiv.innerHTML = '<div class="error">Incorrect flag.</div>';
+            }
+        }
+    </script>
+    
+	<div class="container">
+		<div class="box">
+			<h2>BASE 6 the 4</h2>
+            <p>There are so many different ways of encoding and decodinf information nowadays...One of them will work!  Q1RGe0ZsYWdneVdhZ2d5UmFnZ3l9</p>
+
+			<form onsubmit="checkFlag(event)">
+				<label for="textbox1">Enter Flag:</label>
+				<input type="text" id="textbox1" required>
+				<button type="submit">Submit</button>
+				<div id="message1"></div>
+			</form>
+		</div>
+		<div class="box">
+			<p>Box 2</p>
+			<form>
+				<label for="textbox2">Enter Flag:</label>
+				<input type="text" id="textbox2" required>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+		<div class="box">
+			<p>Box 3</p>
+			<form>
+				<label for="textbox3">Enter Flag:</label>
+				<input type="text" id="textbox3" required>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+		<div class="box">
+			<p>Box 4</p>
+			<form>
+				<label for="textbox4">Enter Flag:</label>
+				<input type="text" id="textbox4" required>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+		<div class="box">
+			<p>Box 5</p>
+			<form>
+				<label for="textbox5">Enter Flag:</label>
+				<input type="text" id="textbox5" required>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
